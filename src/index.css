@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* Nebula / Cyberpunk color palette */
+  --color-quantum-bg: #0a0a1a;
+  --color-quantum-bg-gradient: #1a0a2e;
+  --color-quantum-accent: #00f0ff;
+  --color-quantum-accent-glow: rgba(0, 240, 255, 0.5);
+  --color-quantum-danger: #ff0055;
+  --color-quantum-danger-glow: rgba(255, 0, 85, 0.5);
+  --color-quantum-success: #00ff66;
+  --color-quantum-glass: rgba(255, 255, 255, 0.05);
+
+  --shadow-quantum-glow: 0 0 15px var(--color-quantum-accent-glow), 0 0 30px var(--color-quantum-accent-glow);
+  --shadow-quantum-danger: 0 0 15px var(--color-quantum-danger-glow), 0 0 30px var(--color-quantum-danger-glow);
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-[var(--color-quantum-bg)] to-[var(--color-quantum-bg-gradient)] text-white min-h-screen font-sans;
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-[var(--color-quantum-glass)] backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+}
